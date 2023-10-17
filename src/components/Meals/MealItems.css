@@ -1,0 +1,24 @@
+.meal_items{
+    display: flex;
+    flex-direction: column;
+    margin: auto;   
+    padding: 20px; 
+    background-color: white;
+    width: 50%;
+    border-bottom: 1px solid gray;
+    
+}
+
+.meal_items h3{
+    margin: 0px;
+}
+
+.meal_items p{
+    margin: 0px;
+   font-style: italic;
+}
+
+.meal_items h2{
+    margin: 0px;
+    color: red;
+}
