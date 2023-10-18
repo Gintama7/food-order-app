@@ -1,6 +1,13 @@
+section{
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 0.5px solid gray; 
+}
+
+
 .meal_items{
     margin: 1rem;
-   border-bottom: 0.5px solid gray;   
+    
 }
 
 .meal_items h3{
@@ -16,3 +23,28 @@
     margin: 0px;
     color: red;
 }
+
+form{
+    display: flex;
+    margin-top: 1rem;
+    flex-direction: column;    
+}
+
+.form_input input{
+    width: 50px;
+    margin-left: 5px;
+    padding: 2px;
+    border-radius: 5px;
+}
+
+.add_btn{
+    margin-top: 5px;
+    width: 80px;
+    align-self: center;
+    border-radius: 10px;
+    color: white;
+    background-color:brown ;
+    padding: 5px;
+}
+
+
