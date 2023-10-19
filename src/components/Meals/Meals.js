@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import './Meals.css';
 import MealItems from './MealItems';
 
@@ -36,6 +36,7 @@ const Meals = () => {
       {mealList.map((meal)=>(
         <MealItems
         key={meal.id}
+        id={meal.id}
         price={meal.price}
         desc={meal.description}
         name={meal.name}
