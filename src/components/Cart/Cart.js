@@ -1,11 +1,12 @@
-import React from 'react';
+import React, { useState } from 'react';
 import './Cart.css';
 import Modal from '../UI/Modal';
 
-const Cart = () => {
-    const cartItems = [{id:'c1',name:'Sushi', amount:2,price:12.99}]
+const Cart = (props) => {
+    const cartItems = [{id:'c1',name:'Sushi', amount:2,price:12.99}];
+
   return (
-    <Modal>
+    <Modal showHandler={props.showHandler}>
       <ul className='cart_items'>
         {cartItems.map((item)=>(
             <li>{item.name}</li>
@@ -20,7 +21,7 @@ const Cart = () => {
         </span>
       </div>
       <div className='actions'>
-<button className='button__alt'>Close</button>
+<button className='button__alt' onClick={props.showHandler}>Close</button>
 <button>Order</button>
       </div>
     </Modal>

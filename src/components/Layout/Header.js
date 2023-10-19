@@ -4,11 +4,12 @@ import './Header.css';
 import HeaderCartBtn from './HeaderCartBtn';
 
 const Header = (props) => {
+
   return (
     <Fragment>
         <header className='header'>
             <h1> ReactMeals</h1>
-           <HeaderCartBtn/>
+           <HeaderCartBtn onClick={props.showHandler}/>
            </header>
        
      <div className='main_image'>
