@@ -2,16 +2,35 @@ import React, { useContext, useState } from 'react';
 import './Cart.css';
 import Modal from '../UI/Modal';
 import CartContext from '../../store/cart-context';
+import CartItem from './CartItem';
 
 const Cart = (props) => {
   const cartCxt= useContext(CartContext);
     const cartItems = cartCxt.items;
+    const totalAmount = cartCxt.totalAmount;
+
+    const cardItemHandler=(item)=>{
+      const cartItem= {...item,quantity:1};
+      // cartCxt.addItem(cartItem);
+    }
+
+    const removeItemHandler=(id)=>{
+       cartCxt.removeItem(id);
+    }
 
   return (
     <Modal showHandler={props.showHandler}>
       <ul className='cart_items'>
         {cartItems.map((item)=>(
-            <li>{item.name} {item.price}</li>
+            <CartItem 
+            key={item.id} 
+            name={item.name} 
+            price={item.price} 
+            quantity={item.quantity} 
+            amount={totalAmount} 
+            onAdd={cardItemHandler(item)}
+            onRemove={()=>removeItemHandler(item.id)}
+            />
         ))}
       </ul>
       <div className='total'>
@@ -19,7 +38,7 @@ const Cart = (props) => {
             Total Amount
         </span>
         <span>
-            35.62
+            {totalAmount}
         </span>
       </div>
       <div className='actions'>

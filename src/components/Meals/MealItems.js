@@ -9,7 +9,7 @@ const MealItems = (props) => {
 
   const addItemToCart =(event)=>{
       event.preventDefault();
-      const quantity = document.getElementById('amount_'+props.id).value;
+      const quantity = Number(document.getElementById('amount_'+props.id).value);
       const obj= {id:props.id,name:props.name,description:props.desc,price:props.price};
       crtCtx.addItem({...obj,quantity:quantity});
   }

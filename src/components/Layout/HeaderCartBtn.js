@@ -15,7 +15,7 @@ const HeaderCartBtn = (props) => {
   let quantity=0;
 
   cartCtx.items.forEach((item)=>{
-    quantity= quantity + Number(item.quantity)
+    quantity= quantity + Number(item.quantity);
   })
 
   return (
