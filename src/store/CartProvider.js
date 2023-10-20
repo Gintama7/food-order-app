@@ -44,18 +44,16 @@ const [totalAmount,setTotalAmount] = useState(0);
         
     }
 
-    const incrementHandler=(id)=>{
-      const existingItem = items.find((obj) => obj.id === id);
-
-      if (existingItem) {
+    const incrementHandler=(item)=>{
+      
         const updatedCart = items.map((cartItem) =>
-          cartItem.id === id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
+        cartItem.id === item.id ? { ...cartItem, quantity: cartItem.quantity + 1 } : cartItem
         );
         setItems(updatedCart);
-        const updatedAmount= totalAmount+existingItem.price;
+        const updatedAmount= totalAmount+item.price;
         setTotalAmount(updatedAmount);
       } 
-    }
+    
 
     const cartContext = {
         items:items,

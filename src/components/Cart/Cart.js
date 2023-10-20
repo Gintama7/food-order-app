@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext} from 'react';
 import './Cart.css';
 import Modal from '../UI/Modal';
 import CartContext from '../../store/cart-context';
@@ -9,9 +9,9 @@ const Cart = (props) => {
     const cartItems = cartCxt.items;
     const totalAmount = `$${cartCxt.totalAmount.toFixed(2)}`;
 
-    const cardItemHandler=(id)=>{
+    const cardItemHandler=(item)=>{
       
-      cartCxt.incrementItem(id);
+      cartCxt.incrementItem(item);
     }
 
     const removeItemHandler=(id)=>{

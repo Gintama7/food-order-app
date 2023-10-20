@@ -1,10 +1,8 @@
-import React, {  useState } from 'react';
+import React from 'react';
 import './CartItem.css';
 
 const CartItems = (props) => {
-
-    // const [finalItems,setFinalItems] = useState([]);
-    
+  
 
 
   return (
